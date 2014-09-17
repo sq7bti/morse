@@ -5,12 +5,20 @@ uint8_t k = 0;
 morse telegraph;
 char c;
 
+void mark(void) {
+  analogWrite(RED_LED, 10);
+}
+
+void space(void) {
+  analogWrite(RED_LED, 0);
+}
+
 void setup()
 {
   Serial.begin(115200);
   Serial.println("morse encoder.");
   // put your setup code here, to run once:
-  telegraph.begin(RED_LED, 100, false);
+  telegraph.begin(mark, space, 150, false);
 }
 
 void loop()
@@ -23,4 +31,3 @@ void loop()
   }
   telegraph.process();
 }
-
