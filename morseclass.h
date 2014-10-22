@@ -8,6 +8,7 @@ public:
   void begin(uint8_t _outPin, unsigned int _cpm, bool ver);
   void begin(void (*mark)(void), void (*space)(void), unsigned int _cpm, bool ver);
   void send(char c);
+  void send(char* s);
   bool process();
 private:
   uint8_t outPin;
