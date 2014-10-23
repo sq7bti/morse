@@ -42,8 +42,10 @@ void morse::append(const char *str) {
 };
 
 void morse::send(char* s) {
-  while(s)
-    send(s++);
+  while((*s) != '\0') {
+    send(char(*s));
+    ++s;
+  }
 }
 
 void morse::send(char c) {
