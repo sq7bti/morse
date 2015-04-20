@@ -41,14 +41,14 @@ void morse::append(const char *str) {
   };
 };
 
-void morse::send(char* s) {
+void morse::send(const char* s) {
   while((*s) != '\0') {
-    send(char(*s));
+    send((const char)*s);
     ++s;
   }
 }
 
-void morse::send(char c) {
+void morse::send(const char c) {
   switch(c) {
   case '=':
     append("-...-");
