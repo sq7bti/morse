@@ -39,207 +39,205 @@ void morse::append(const char *str) {
     _buffer[_head++] = str[i++];
     _head %= BUFFER_SIZE;
   };
+  _buffer[_head++] = ' ';
+  _head %= BUFFER_SIZE;
 };
 
 void morse::send(const char* s) {
   while((*s) != '\0') {
-    send((const char)*s);
-    ++s;
-  }
-}
-
-void morse::send(const char c) {
-  switch(c) {
-  case '=':
-    append("-...-");
+    switch((const char)*s) {
+    case '=':
+      append("-...-");
     break;
-  case '_':
-    append("..--.-");
+    case '_':
+      append("..--.-");
     break;
-  case '-':
-    append("-....-");
+    case '-':
+      append("-....-");
     break;
-  case ',':
-    append("--..--");
+    case ',':
+      append("--..--");
     break;
-  case ';':
-    append("-.-.-.");
+    case ';':
+      append("-.-.-.");
     break;
-  case ':':
-    append("---...");
+    case ':':
+      append("---...");
     break;
-  case '!':
-    append("-.-.--");
+    case '!':
+      append("-.-.--");
     break;
-  case '?':
-    append("..--..");
+    case '?':
+      append("..--..");
     break;
-  case '/':
-    append("-..-.");
+    case '/':
+      append("-..-.");
     break;
-  case '.':
-    append(".-.-.-");
+    case '.':
+      append(".-.-.-");
     break;
     //case ''':append(".----."); break;
-  case '"':
-    append(".-..-.");
+    case '"':
+      append(".-..-.");
     break;
-  case '(':
-    append("-.--.");
+    case '(':
+      append("-.--.");
     break;
-  case ')':
-    append("-.--.-");
+    case ')':
+      append("-.--.-");
     break;
-  case '@':
-    append(".--.-.");
+    case '@':
+      append(".--.-.");
     break;
-  case '$':
-    append("...-..-");
+    case '$':
+      append("...-..-");
     break;
-  case '&':
-    append(".-...");
+    case '&':
+      append(".-...");
     break;
-  case '+':
-    append(".-.-.");
+    case '+':
+      append(".-.-.");
     break;
-  case '0':
-    append("-----");
+    case '0':
+      append("-----");
     break;
-  case '1':
-    append(".----");
+    case '1':
+      append(".----");
     break;
-  case '2':
-    append("..---");
+    case '2':
+      append("..---");
     break;
-  case '3':
-    append("...--");
+    case '3':
+      append("...--");
     break;
-  case '4':
-    append("....-");
+    case '4':
+      append("....-");
     break;
-  case '5':
-    append(".....");
+    case '5':
+      append(".....");
     break;
-  case '6':
-    append("-....");
+    case '6':
+      append("-....");
     break;
-  case '7':
-    append("--...");
+    case '7':
+      append("--...");
     break;
-  case '8':
-    append("---..");
+    case '8':
+      append("---..");
     break;
-  case '9':
-    append("----.");
+    case '9':
+      append("----.");
     break;
-  case 'A':
-  case 'a':
-    append(".-");
+    case 'A':
+    case 'a':
+      append(".-");
     break;
-  case 'B':
-  case 'b':
-    append("-...");
+    case 'B':
+    case 'b':
+      append("-...");
     break;
-  case 'C':
-  case 'c':
-    append("-.-.");
+    case 'C':
+    case 'c':
+      append("-.-.");
     break;
-  case 'D':
-  case 'd':
-    append("-..");
+    case 'D':
+    case 'd':
+      append("-..");
     break;
-  case 'E':
-  case 'e':
-    append(".");
+    case 'E':
+    case 'e':
+      append(".");
     break;
-  case 'F':
-  case 'f':
-    append("..-.");
+    case 'F':
+    case 'f':
+      append("..-.");
     break;
-  case 'G':
-  case 'g':
-    append("--.");
+    case 'G':
+    case 'g':
+      append("--.");
     break;
-  case 'H':
-  case 'h':
-    append("....");
+    case 'H':
+    case 'h':
+      append("....");
     break;
-  case 'I':
-  case 'i':
-    append("..");
+    case 'I':
+    case 'i':
+      append("..");
     break;
-  case 'J':
-  case 'j':
-    append(".---");
+    case 'J':
+    case 'j':
+      append(".---");
     break;
-  case 'K':
-  case 'k':
-    append("-.-");
+    case 'K':
+    case 'k':
+      append("-.-");
     break;
-  case 'L':
-  case 'l':
-    append(".-..");
+    case 'L':
+    case 'l':
+      append(".-..");
     break;
-  case 'M':
-  case 'm':
-    append("--");
+    case 'M':
+    case 'm':
+      append("--");
     break;
-  case 'N':
-  case 'n':
-    append("-.");
+    case 'N':
+    case 'n':
+      append("-.");
     break;
-  case 'O':
-  case 'o':
-    append("---");
+    case 'O':
+    case 'o':
+      append("---");
     break;
-  case 'P':
-  case 'p':
-    append(".--.");
+    case 'P':
+    case 'p':
+      append(".--.");
     break;
-  case 'Q':
-  case 'q':
-    append("--.-");
+    case 'Q':
+    case 'q':
+      append("--.-");
     break;
-  case 'R':
-  case 'r':
-    append(".-.");
+    case 'R':
+    case 'r':
+      append(".-.");
     break;
-  case 'S':
-  case 's':
-    append("...");
+    case 'S':
+    case 's':
+      append("...");
     break;
-  case 'T':
-  case 't':
-    append("-");
+    case 'T':
+    case 't':
+      append("-");
     break;
-  case 'U':
-  case 'u':
-    append("..-");
+    case 'U':
+    case 'u':
+      append("..-");
     break;
-  case 'V':
-  case 'v':
-    append("...-");
+    case 'V':
+    case 'v':
+      append("...-");
     break;
-  case 'W':
-  case 'w':
-    append(".--");
+    case 'W':
+    case 'w':
+      append(".--");
     break;
-  case 'X':
-  case 'x':
-    append("-..-");
+    case 'X':
+    case 'x':
+      append("-..-");
     break;
-  case 'Y':
-  case 'y':
-    append("-.--");
+    case 'Y':
+    case 'y':
+      append("-.--");
     break;
-  case 'Z':
-  case 'z':
-    append("--..");
+    case 'Z':
+    case 'z':
+      append("--..");
     break;
-  default:
-    append(" ");
+    default:
+      append(" ");
     break;
   };
+  ++s;
+  }
 };
 
 bool morse::process() {
